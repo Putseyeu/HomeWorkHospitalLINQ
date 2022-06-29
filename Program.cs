@@ -69,10 +69,7 @@ namespace HomeWorkHospitalLinq
 
         public void ShowAllSick()
         {
-            foreach (var sick in _sicks)
-            {
-                sick.ShowInfo();
-            }
+            ShowListSick(_sicks);
         }
 
         public void ShowPatientsByDisease()
@@ -87,10 +84,15 @@ namespace HomeWorkHospitalLinq
             }
             else
             {
-                foreach (var sick in sicksSortByDisease)
-                {
-                    sick.ShowInfo();
-                }
+                ShowListSick(sicksSortByDisease);
+            }
+        }
+
+        private void ShowListSick(List<Sick> sicks)
+        {
+            foreach (var sick in sicks)
+            {
+                sick.ShowInfo();
             }
         }
 
